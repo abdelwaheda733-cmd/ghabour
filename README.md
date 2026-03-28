@@ -1,21 +1,92 @@
-متحمس جداً لمشاركة مشروع تحليل بيانات مبيعات التجزئة (Retail Sales Analysis) اللي اشتغلت عليه مؤخراً! الداش بورد بتقدم نظرة شاملة على أداء البي، من أول الأرباح الإجمالية لحد سلوك العميل عند الدفع.
- Key Insights
-الأداء المالي: حققنا إجمالي مبيعات 251.57M بصافي ربح 26.59M، مع نسبة هامش ربح (Profit Margin) وصلت لـ 10.57%.
-تصدر الفئات: فئة الـ Clothing هي "الحصان الرابح"، مش بس في عدد القطع المباعة (104K)، لكن كمان في المساهمة الكبرى في الأرباح (11.5M).
-التوزيع الجغرافي: ولاية California هي السوق الأقوى بفارق كبير، تليها New York و Texas، وده بيوضح الأماكن اللي لازم نركز فيها حملاتنا التسويقية الجاية.
-سلوك الدفع: الملاحظ إن الـ Cash لسه مسيطر بنسبة 44.7%، وده مؤشر مهم لدراسة مدى جاهزية العملاء للتحول الرقمي أو توفير عروض لمدفوعات الـ Credit Card.
- الأدوات المستخدمة:
-Power BI لعمل الـ Visualizations والـ Data Modeling.
-DAX لحساب المؤشرات المعقدة زي الـ Profit Margin و الـ ATV.
-<img width="1449" height="797" alt="غبور2" src="https://github.com/user-attachments/assets/8530b4e7-b9b7-4276-a0bb-4ff058567e5c" />
-<img width="1403" height="790" alt="غبور3" src="https://github.com/user-attachments/assets/1df39de3-30ca-4964-aebf-176d42696158" />
-<img width="1387" height="794" alt="غبور4" src="https://github.com/user-attachments/assets/4900a74b-41ce-465c-87a3-6c6d1fc992c9" />
-<img width="1391" height="794" alt="غبور5" src="https://github.com/user-attachments/assets/f5ceae65-8f6c-40d8-a315-e230b9099778" <img width="1379" height="796" alt="غبور6" src="https://github.com/user-attachments/assets/5cc8acc3-4d18-449a-9021-da53436e3f9d" />
-/>
-<img width="1379" height="796" alt="غبور6" src="https://github.com/user-attachments/assets/92d70810-f8ae-4dfb-a875-ba380d127c60" />
-<img width="1391" height="794" alt="غبور5" src="https://github.com/user-attachments/assets/23bd8d95-01e2-4266-b7ac-0849a4098f2c" />
-<img width="1387" height="794" alt="غبور4" src="https://github.com/user-attachments/assets/3641be69-bc05-40a4-aa8d-3204ded39bc8" />
-<img width="1403" height="790" alt="غبور3" src="https://github.com/user-attachments/assets/c2dbadda-8cbd-4eca-8e82-e95a5fb31f93" />
-<img width="1449" height="797" alt="غبور2" src="https://github.com/user-attachments/assets/1cc7467c-fbd6-4531-9b66-53e6aebb03ed" />
-<img width="1459" height="171" alt="غبور7" src="https://github.com/user-attachments/assets/316cef0f-452e-4e9f-b6e4-340c05914ac4" />
-<img width="1357" height="151" alt="غبور8" src="https://github.com/user-attachments/assets/b1fc6a92-5060-401f-a7c7-fba5e769e432" />
+Introduction
+
+This project is a dashboard for Ghabbour Company built using Power BI. The goal is to analyze sales performance and track KPIs interactively to help in decision-making.
+
+Data Preparation (Power Query)
+
+At the beginning, I worked on cleaning the data using Power Query:
+
+Removed duplicates
+Handled missing values
+Performed data type transformation (dates – numbers)
+Created calculated columns such as (Year / Quarter)
+Converted all primary keys and foreign keys to text, or more precisely changed their formatting, to help me in Data Modeling
+Data Modeling
+
+I removed everything that was automatically created by Power BI and started building the relationships myself so they would be easier and faster in Power BI and make the analysis smarter and without errors.
+
+I really needed to create a relationship between two fact tables, but I didn’t do it because it is not the best practice in analysis
+I could have created a bridge table, but instead I worked using DAX through TREATAS
+DAX Calculations
+
+I used DAX to create basic measures such as:
+
+Total Sales
+Total Transactions
+Total Quantity
+Sales Percentage
+
+I also used functions such as:
+
+CALCULATE
+SUMX
+TOPN
+ALL
+TREATAS
+Dashboard
+
+The dashboard is divided into several sections:
+
+Total Transactions (5K)
+Total Quantity (24.4K)
+Total Invoices (44bn)
+Total Revenue
+
+The goal is to provide a high-level view.
+
+Sales comparison by year (2024 vs 2025)
+Quarterly trend analysis
+
+This helps us understand trends and seasonality.
+
+Analysis of number of invoices per Sales Rep
+Completed transactions
+Cancelled transactions
+
+From this, we can evaluate each employee’s performance and identify the highest and lowest performers.
+
+Customer distribution by gender (Male vs Female)
+
+This helps in understanding customer behavior.
+
+Here, I had to use DAX to get the correct numbers based on completed transactions for each seller, and not rely on the numbers موجودة in another table because many transactions were cancelled.
+
+After that, I analyze warehouse movement and the number of units available in each warehouse
+
+This helps us know which products and models are most requested so we can keep supplying the warehouses with them, and which ones have low demand so we can start making offers on them or increase their marketing.
+
+
+
+
+
+
+<img width="1449" height="797" alt="غبور2" src="https://github.com/user-attachments/assets/252c564b-6a79-49a9-b0d5-3b0ce56eb073" />
+<img width="1403" height="790" alt="غبور3" src="https://github.com/user-attachments/assets/7cf34f1d-a285-47e1-ae5c-7e428424b484" />
+<img width="1387" height="794" alt="غبور4" src="https://github.com/user-attachments/assets/d9fe36ec-3fdd-447f-884b-7a845f638229" />
+<img width="1391" height="794" alt="غبور5" src="https://github.com/user-attachments/assets/2dc23f60-ae36-4789-9f21-9b325e39093e" />
+<img width="1379" height="796" alt="غبور6" src="https://github.com/user-attachments/assets/55fc88ef-4a04-45bc-8290-7e152e198891" />
+<img width="1459" height="171" alt="غبور7" src="https://github.com/user-attachments/assets/3293831f-fcc6-4c64-b704-027c65c43427" />
+<img width="1357" height="151" alt="غبور8" src="https://github.com/user-attachments/assets/df9daf89-5cce-4b50-bef8-94d57e1bacd1" />
+
+
+
+
+
+
+
+
+
+
+
+
+Then I move to analyzing the dealers we work with in terms of their number, locations, who deals the most with the company, whose transactions are completed, who cancels, and their evaluation
